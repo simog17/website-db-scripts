@@ -37,3 +37,8 @@ Thumbs.db
 # Misc #
 ########
 .idea
+
+# Custom #
+##########
+db-config-*.json
+node_modules

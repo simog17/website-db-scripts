@@ -1,1 +1,5 @@
-console.log("qui verranno eseguiti gli scripts di creazione e distruzione del db")
+const mysql = require('mysql');
+const pool = mysql.createPool({
+  connectionLimit : 10,
+  //todo
+});
