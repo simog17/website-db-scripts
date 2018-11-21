@@ -1,4 +1,4 @@
-CREATE TABLE Contents(
+CREATE TABLE IF NOT EXIST Contents(
   id int(11) NOT NULL AUTO_INCREMENT,
   name varchar(255),
   permalink varchar(255),
@@ -6,21 +6,21 @@ CREATE TABLE Contents(
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Categories(
+CREATE TABLE IF NOT EXIST Categories(
   id int(11) NOT NULL AUTO_INCREMENT,
   name varchar(255),
   permalink varchar(255),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Tags(
+CREATE TABLE IF NOT EXIST Tags(
   id int(11) NOT NULL AUTO_INCREMENT,
   name varchar(255),
   color varchar(255),
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Attachments(
+CREATE TABLE IF NOT EXIST Attachments(
   id int(11) NOT NULL AUTO_INCREMENT,
   href varchar(255),
   contentType varchar(255),
@@ -28,7 +28,7 @@ CREATE TABLE Attachments(
   PRIMARY KEY (id)
 );
 
-CREATE TABLE ContentsCategoriesTh(
+CREATE TABLE IF NOT EXIST ContentsCategoriesTh(
   id int(11) NOT_NULL AUTO_INCREMENT,
   contentId int(11),
   categoryId int(11),
@@ -37,7 +37,7 @@ CREATE TABLE ContentsCategoriesTh(
   FOREIGN KEY (categoryId) REFERENCES Categories(id)
 );
 
-CREATE TABLE ContentsTagsTh(
+CREATE TABLE IF NOT EXIST ContentsTagsTh(
   id int(11) NOT_NULL AUTO_INCREMENT,
   contentId int(11),
   tagId int(11),
@@ -47,7 +47,7 @@ CREATE TABLE ContentsTagsTh(
 
 );
 
-CREATE TABLE ContentsAttachmentsTh(
+CREATE TABLE IF NOT EXIST ContentsAttachmentsTh(
   id int(11) NOT_NULL AUTO_INCREMENT,
   contentId int(11),
   attachmentId int(11),
